@@ -243,10 +243,27 @@ $('.outway').on('keyup click', function(){ $('.outway').removeClass('active'); $
 
 
 
+var $sidebar = $('.sidebar')
 
+/* WTF?! ^^^^^ */
+$('.hamburger').on('click', function() {
+  var $this = $(this);
+  var backgroundImage = '';
 
+  if ($this.hasClass('active')) {
+    $this.removeClass('active');
+    $sidebar.removeClass('active');
+  } else {
+    backgroundImage = 'url("/img/burgerClose.png")';
 
+    $this.addClass('active');
+    $sidebar.addClass('active');
+  }
 
+  $this.css({
+    backgroundImage: backgroundImage
+  });
+})
 
 
 
